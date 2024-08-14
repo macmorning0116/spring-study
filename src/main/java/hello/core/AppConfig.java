@@ -20,7 +20,6 @@ public class AppConfig {
         return new MemberServiceImpl(memberRepository());
     }
 
-
     @Bean
     public OrderService orderService() {
         return new OrderServiceImpl(memberRepository(), discountPolicy());
@@ -30,7 +29,6 @@ public class AppConfig {
     public MemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
-
 
     @Bean
     public DiscountPolicy discountPolicy() {

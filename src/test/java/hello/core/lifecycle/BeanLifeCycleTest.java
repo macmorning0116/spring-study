@@ -1,13 +1,11 @@
 package hello.core.lifecycle;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class BeanLifeCycleTest {
 
@@ -18,8 +16,6 @@ class BeanLifeCycleTest {
         ac.close(); // 스프링 컨테이너를 종료, ConfigurableApplicationContext 필요
     }
 
-
-
     @Configuration
     static class LifeCycleConfig{
         @Bean
@@ -27,7 +23,6 @@ class BeanLifeCycleTest {
             NetworkClient networkClient = new NetworkClient();
             networkClient.setUrl("http://hello-spring.dev");
             return networkClient;
-
         }
     }
 }
